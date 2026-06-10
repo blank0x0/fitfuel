@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════
+   Budget Planner — dedicated CSS module
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Hero banner ─────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0891b2 60%, #0e7490 100%);
+  border-radius: 24px;
+  padding: 1.5rem 1.5rem 1.6rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(29,78,216,.28);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.07);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -24px; left: 30px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+}
+.heroTitle   { font-size: 1.75rem; font-weight: 800; letter-spacing: -.025em; margin: 0; }
+.heroSub     { font-size: .875rem; color: rgba(255,255,255,.8); margin-top: .3rem; }
+.heroBadge   {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: .75rem;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* ── Card shell ──────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid #e5e7eb;
+  padding: 1.25rem 1.25rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  transition: box-shadow 220ms ease;
+}
+.card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.09); }
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 1rem;
+}
+.cardIcon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Store selector ──────────────────────────────────────── */
+.storeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.storeBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 130ms ease, box-shadow 180ms ease;
+  font-family: inherit;
+}
+.storeBtn:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37,99,235,.12);
+}
+.storeBtn:active { transform: scale(.96); }
+.storeBtn:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.storeBtnActive {
+  border-color: #2563eb !important;
+  background: #eff6ff !important;
+  box-shadow: 0 4px 14px rgba(37,99,235,.22) !important;
+}
+
+.storeEmoji { font-size: 1.6rem; line-height: 1; }
+.storeName  { font-size: .72rem; font-weight: 700; color: #374151; text-align: center; line-height: 1.2; }
+.storeTier  {
+  font-size: .62rem; font-weight: 600;
+  padding: 2px 7px; border-radius: 99px;
+}
+.tierBudget  { background: #d1fae5; color: #065f46; }
+.tierMid     { background: #fef3c7; color: #92400e; }
+.tierPremium { background: #fee2e2; color: #991b1b; }
+.tierBulk    { background: #ede9fe; color: #5b21b6; }
+
+/* ── Ingredient builder ──────────────────────────────────── */
+.inputRow {
+  display: flex;
+  gap: 8px;
+}
+.addBtn {
+  flex-shrink: 0;
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 160ms ease, transform 130ms ease;
+}
+.addBtn:hover  { background: #1d4ed8; }
+.addBtn:active { transform: scale(.92); }
+
+.chipList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+  min-height: 10px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1.5px solid #bfdbfe;
+  font-size: .78rem;
+  font-weight: 700;
+  animation: chipIn .2s ease both;
+}
+@keyframes chipIn {
+  from { opacity:0; transform: scale(.8); }
+  to   { opacity:1; transform: scale(1); }
+}
+.chipX {
+  background: none; border: none; cursor: pointer;
+  color: #3b82f6; display: flex; align-items: center;
+  padding: 0; transition: color 140ms ease;
+}
+.chipX:hover { color: #dc2626; }
+
+.mealSelect {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: .875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.calcBtn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #1d4ed8, #0891b2);
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: opacity 180ms ease, transform 130ms ease, box-shadow 180ms ease;
+  box-shadow: 0 4px 14px rgba(29,78,216,.30);
+  font-family: inherit;
+}
+.calcBtn:hover   { opacity: .92; box-shadow: 0 6px 20px rgba(29,78,216,.38); }
+.calcBtn:active  { transform: scale(.97); }
+.calcBtn:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+/* ── Price table ─────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .875rem;
+}
+.table th {
+  text-align: left;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #6b7280;
+  padding: 0 10px 10px;
+  border-bottom: 2px solid #f3f4f6;
+}
+.table td {
+  padding: 11px 10px;
+  border-bottom: 1px solid #f9fafb;
+  color: #111827;
+  vertical-align: middle;
+}
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: #f9fafb; }
+
+.ingCell  { font-weight: 600; }
+.unitCell { color: #9ca3af; font-size: .78rem; }
+.priceCell {
+  text-align: right;
+  font-weight: 700;
+  color: #059669;
+  font-size: .95rem;
+}
+.naCell   { text-align: right; color: #d1d5db; font-size: .8rem; }
+.noMatch  { color: #f87171; font-weight: 600; }
+
+/* ── Totals panel ────────────────────────────────────────── */
+.totals {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid #e5e7eb;
+}
+.totalsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: .9rem;
+  color: #374151;
+}
+.totalsRow:last-child { border-bottom: none; }
+.totalsLabel { font-weight: 600; }
+.totalsValue { font-weight: 700; }
+
+.subtotalRow {
+  background: linear-gradient(135deg, #1d4ed8 0%, #0891b2 100%);
+  border-bottom: none !important;
+}
+.subtotalRow .totalsLabel,
+.subtotalRow .totalsValue { color: #fff; font-size: 1rem; }
+
+.savingsRow { background: #f0fdf4; }
+.savingsRow .totalsValue { color: #059669; }
+
+/* ── Store cheapest badge ────────────────────────────────── */
+.cheapestBadge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #d1fae5; color: #065f46;
+  font-size: .72rem; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px;
+}
+
+/* ── Empty states ────────────────────────────────────────── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 3rem 1rem;
+  color: #9ca3af;
+  text-align: center;
+}
+.emptyIcon { font-size: 2.8rem; opacity: .45; }
+.emptyText { font-size: .875rem; font-weight: 500; max-width: 260px; }
+
+/* ── Skeleton rows ───────────────────────────────────────── */
+.skeletonRow {
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.3s ease infinite;
+  margin-bottom: 8px;
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}

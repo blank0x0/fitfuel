@@ -1,0 +1,90 @@
+/* ═══════════════════════════════════════════════════
+   Theme Toggle — pill switch with sliding thumb
+   ═══════════════════════════════════════════════════ */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.30);
+  border-radius: 999px;
+  padding: 5px 10px 5px 6px;
+  cursor: pointer;
+  color: #fff;
+  font-family: inherit;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  transition:
+    background  180ms ease,
+    border-color 180ms ease,
+    transform   120ms ease;
+  white-space: nowrap;
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.50);
+}
+
+.toggle:active  { transform: scale(.94); }
+
+.toggle:focus-visible {
+  outline: 2px solid rgba(255,255,255,.8);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* ── Track (the pill) ──────────────────────────── */
+.track {
+  position: relative;
+  width: 34px;
+  height: 19px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  transition: background 300ms ease;
+  flex-shrink: 0;
+}
+
+.trackDark {
+  background: #1e293b;
+}
+
+/* ── Sliding thumb ─────────────────────────────── */
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+  transition: transform 280ms cubic-bezier(.34,1.56,.64,1), background 280ms ease;
+  will-change: transform;
+}
+
+.thumbDark {
+  transform: translateX(15px);
+  background: #f8fafc;
+}
+
+/* ── Icon inside thumb ─────────────────────────── */
+.icon {
+  color: #f59e0b;    /* sun = amber */
+  flex-shrink: 0;
+}
+
+.thumbDark .icon {
+  color: #6366f1;    /* moon = indigo */
+}
+
+/* ── Label ─────────────────────────────────────── */
+.label {
+  color: rgba(255,255,255,.9);
+  user-select: none;
+}
