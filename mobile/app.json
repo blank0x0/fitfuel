@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "FitFuel",
+    "slug": "fitfuel-mobile",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "fitfuel",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fitfuel.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "FitFuel uses your location to find nearby grocery stores and restaurants."
+      }
+    },
+    "android": {
+      "package": "com.fitfuel.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#10b981",
+        "foregroundImage": "./assets/adaptive-icon.png"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "FitFuel uses your location to find nearby grocery stores."
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
