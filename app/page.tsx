@@ -140,7 +140,7 @@ export default function Dashboard() {
       {/* ── Mobile app banner ─────────────────────── */}
       <motion.section {...fadeUp(0.23)}>
         <a
-          href="https://github.com/Blank0x0/fitfuel/tree/main/mobile"
+          href="https://github.com/Blank0x0/fitfuel/tree/master/mobile"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-4 rounded-2xl p-4 shadow-md card-hover"
